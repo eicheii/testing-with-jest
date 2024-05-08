@@ -32,3 +32,24 @@ describe('Clicking "Pusha till stacken"', () => {
 		await alert.accept();
 	});
 });
+
+test('Verify presence and functionality of "Push to Stack" button', async () => {
+    // Hitta knappen "Push to Stack"
+    const pushButton = await driver.findElement(By.id('push'));
+
+    // Verifiera att knappen finns
+    expect(pushButton).not.toBeNull();
+
+    // Klicka på knappen
+    await pushButton.click();
+
+    // Vänta på att en prompt visas
+    await driver.wait(until.alertIsPresent());
+
+    // Verifiera att en prompt visas
+    const alert = await driver.switchTo().alert();
+    expect(alert).not.toBeNull();
+
+    // Avbryt prompten
+    await alert.dismiss();
+});

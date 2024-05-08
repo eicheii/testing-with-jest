@@ -18,3 +18,10 @@ test('peek on stack with two or more elements returns the top element', () => {
     expect(stack.peek()).toBe(42);
 });
 
+
+
+test('push should add elements to the stack', () => {
+    // Den här testen kommer att misslyckas eftersom push-funktionen inte finns implementerad än
+    stack.push(5);
+    expect(stack.peek()).toBe(5);
+});
