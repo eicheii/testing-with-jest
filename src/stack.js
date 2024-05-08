@@ -16,3 +16,8 @@ exports.pop = function () {
 exports.peek = function () {
     return _.last(stack);
 }
+
+// Återställer stacken till en tom array
+exports.clear = function () {
+    stack = [];
+}
